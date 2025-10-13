@@ -17,12 +17,12 @@ describe("Teste para o componente PostComment", () => {
     
     fireEvent.change(commentTextarea, { target: { value: "a random comment 1" } });
     fireEvent.click(commentButton);
-    const comment = screen.getByTestId("comment-0");
-    expect(comment).toBeInTheDocument();
+    const commentText = screen.getByText("a random comment 1")
+    expect(commentText).toBeInTheDocument();
     
     fireEvent.change(commentTextarea, { target: { value: "another random comment 2" } });
     fireEvent.click(commentButton);
-    const anotherComment = screen.getByTestId("comment-1");
-    expect(anotherComment).toBeInTheDocument();
+    const anotherCommentText = screen.getByText("another random comment 2")
+    expect(anotherCommentText).toBeInTheDocument();
   });
 });
